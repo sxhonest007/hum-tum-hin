@@ -1,0 +1,25 @@
+services:
+  # --- Minibot Supreme Service ---
+  - type: worker
+    name: minibot-supreme
+    runtime: node
+    region: oregon # Change to your preferred region
+    plan: free     # You can upgrade to 'starter' for better performance
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: NODE_VERSION
+        value: 18.0.0
+      - key: MONGO_URI
+        value: mongodb+srv://malvintech11_db_user:0SBgxRy7WsQZ1KTq@cluster0.xqgaovj.mongodb.net/?appName=Cluster0
+      - key: OWNER_NUM
+        value: "263714757857"
+      - key: PREFIX
+        value: "."
+      - key: BOT_NAME
+        value: "𝐄𝐂𝐋𝐈𝐏𝐒𝐄 𝐗𝐃 ⚡"
+
+# --- Optional: If you want Render to host a private Redis for temporary session caching ---
+# databases:
+#   - name: minibot-cache
+#     plan: free
